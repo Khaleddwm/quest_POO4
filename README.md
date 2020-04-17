@@ -1,3 +1,3 @@
 # quest_POO4
 
-** J'ai fait des petits effets a l'aide de Javascript **
+**_J'ai fait des petits effets a l'aide de Javascript_**
