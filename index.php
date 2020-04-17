@@ -21,7 +21,7 @@ $springfieldPolice->setEnergyLevel(50) . '<br>';
 echo $springfieldPolice->forward() . '<br>';
 echo $springfieldPolice->brake() . '<br>';
 echo $springfieldPolice->brake() . '<br>';
-echo "This vehicle has " . $springfieldPolice->getEnergyLevel() . " liters in the thank." . '<br>' . '<br>';
+echo "This vehicle has " . $springfieldPolice->getEnergyLevel() . " liters in the tank." . '<br>' . '<br>';
 
 
 
@@ -70,12 +70,12 @@ $car->setNbWheels(4);
 $car->setCurrentSpeed(127);
 $car->setEnergyLevel(90);
 $car->start() . '<br>';
-echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the thank." . '</h3>';
+echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $car->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $car->brake() . '</p>';
 echo '<p style="color:darkorange">' . $car->brake() . '</p>';
 echo '<p style="color:green">' . $car->forward() . '</p>';
-echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the thank." . '</h3>';
+echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '</div>';
 
 var_dump($car);
@@ -116,12 +116,12 @@ $car->setNbWheels(4);
 $camaro->setCurrentSpeed(265);
 $camaro->setEnergyLevel(70);
 $camaro->start() . '<br>';
-echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the thank." . '</h3>';
+echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $camaro->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $camaro->brake() . '</p>';
 echo '<p style="color:darkorange">' . $camaro->brake() . '</p>';
 echo '<p style="color:green">' . $camaro->forward() . '</p>';
-echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the thank." . '</h3>';
+echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '</div>';
 
 var_dump($camaro);
@@ -146,7 +146,7 @@ echo "filling status of your vehicle: " . $iveco->getStorage() . "." . '<br>';
 $iveco->setCharge(12);
 echo "The vehicle load is currently " . $iveco->getCharge() . " tonnes." .'<br>';
 echo "filling status of your vehicle: " . $iveco->getStorage() . "." . '<br>';
-echo "This vehicle has " . $iveco->getEnergyLevel() . " liters in the thank." . '<br>';
+echo "This vehicle has " . $iveco->getEnergyLevel() . " liters in the tank." . '<br>';
 
 var_dump($iveco);
 
