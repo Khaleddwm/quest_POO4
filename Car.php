@@ -42,10 +42,10 @@ class Car extends Vehicle {
             $this->start();
         } catch (Exception $e) {
             $this->setHasParkBrake(false);
-            echo '<h1 style="color:red">' . $e->getMessage() . '</h1>';
+            echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
         } finally {
-            echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
-            echo "Ma voiture roule comme un donut." . '</h2>';
+            echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
+            echo '<h2 style="color:purple">' . "Ma voiture roule comme un donut." . '</h2>';
         }
     }
 
