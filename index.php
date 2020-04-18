@@ -69,7 +69,7 @@ periode = setInterval(clignotement, 800);
 $car->setNbWheels(4);
 $car->setCurrentSpeed(127);
 $car->setEnergyLevel(90);
-$car->start() . '<br>';
+echo $car->start() . '<br>';
 echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $car->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $car->brake() . '</p>';
@@ -85,9 +85,9 @@ var_dump($car);
 $camaro = new Car('purple', 2, 'fuel');
 echo '<div style="text-align:center">';
 try {
-    $camaro->start();
+    echo $camaro->start();
 } catch (Exception $e) {
-    echo $camaro->setHasParkBrake(false);
+    $camaro->setHasParkBrake(false);
     echo '<div id="LblClignotant" style="background-color:lightgrey"><h1 style="color:red">' . $e->getMessage() . '</h1>';
 } finally {
     echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
@@ -115,7 +115,7 @@ periode = setInterval(clignotementFading, 85 );
 $car->setNbWheels(4);
 $camaro->setCurrentSpeed(265);
 $camaro->setEnergyLevel(70);
-$camaro->start() . '<br>';
+echo $camaro->start() . '<br>';
 echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $camaro->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $camaro->brake() . '</p>';
