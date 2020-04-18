@@ -23,12 +23,12 @@ class Car extends Vehicle {
             $this->currentSpeed--;
             $sentence .= "Brake!!! ";
             $this->energyLevel -= 0.01;
-    }
+        }
         $sentence .= "I'm stopped !";
         return $sentence;
     }
 
-    public function start()
+    public function start() : void
     {   
         parent::start();
         if($this->hasParkBrake == true) {
@@ -36,19 +36,6 @@ class Car extends Vehicle {
         }
     }
         
-    public function tryCar()
-    {
-        try {
-            $this->start();
-        } catch (Exception $e) {
-            $this->setHasParkBrake(false);
-            echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
-        } finally {
-            echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
-            echo '<h2 style="color:purple">' . "Ma voiture roule comme un donut." . '</h2>';
-        }
-    }
-
     public function getEnergy() : string
     {
         return $this->energy;
@@ -58,7 +45,7 @@ class Car extends Vehicle {
     {
         if (in_array($energy, self::ALLOWED_ENERGIES)) {
             $this->energy = $energy;
-    }
+        }
         return $this;
     }
 
@@ -72,7 +59,7 @@ class Car extends Vehicle {
         $this->energyLevel = $energyLevel;
     }
 
-    public function getHasParkBrake()
+    public function getHasParkBrake() : bool
     {
         return $this->hasParkBrake;
     }
@@ -80,8 +67,6 @@ class Car extends Vehicle {
     public function setHasParkBrake($hasParkBrake) : void
     {
         $this->hasParkBrake = $hasParkBrake;
-    }
-
-    
+    }   
  
 }
