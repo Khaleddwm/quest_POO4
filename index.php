@@ -40,15 +40,23 @@ $car = new Car('green', 4, 'electric');
 
 echo '<div style="text-align:center">';
 echo '<h1 style="background-color:black; color:white">' . "Quest POO 4" . '</h1>';
-try {
-    echo $car->start();
-} catch (Exception $e) {
-    $car->setHasParkBrake(false);
-    echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey"><h1 style="color:red">' . $e->getMessage() . '</h1>';
-} finally {
-    echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
-    echo "Ma voiture roule comme un donut." . '</h2></div>';
-}
+echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey">';
+$car->tryCar();
+echo '</div>';
+
+$car->setNbWheels(4);
+$car->setCurrentSpeed(127);
+$car->setEnergyLevel(90);
+$car->start();
+echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
+echo '<p style="color:green">' . $car->forward() . '</p>';
+echo '<p style="color:darkorange; text-align:left">' . $car->brake() . '</p>';
+echo '<p style="color:darkorange">' . $car->brake() . '</p>';
+echo '<p style="color:green">' . $car->forward() . '</p>';
+echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
+echo '</div>';
+
+var_dump($car);
 
 echo '<p><br/>
 <script type="text/javascript"> 
@@ -66,33 +74,25 @@ periode = setInterval(clignotement, 800);
 </script></p>';
 
 
-$car->setNbWheels(4);
-$car->setCurrentSpeed(127);
-$car->setEnergyLevel(90);
-echo $car->start() . '<br>';
-echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
-echo '<p style="color:green">' . $car->forward() . '</p>';
-echo '<p style="color:darkorange; text-align:left">' . $car->brake() . '</p>';
-echo '<p style="color:darkorange">' . $car->brake() . '</p>';
-echo '<p style="color:green">' . $car->forward() . '</p>';
-echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
-echo '</div>';
-
-var_dump($car);
-
-
-
 $camaro = new Car('purple', 2, 'fuel');
 echo '<div style="text-align:center">';
-try {
-    echo $camaro->start();
-} catch (Exception $e) {
-    $camaro->setHasParkBrake(false);
-    echo '<div id="LblClignotant" style="background-color:lightgrey"><h1 style="color:red">' . $e->getMessage() . '</h1>';
-} finally {
-    echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
-    echo "Ma voiture roule comme un donut." . '</h2></div>';
-}
+echo '<div id="LblClignotant" style="background-color:lightgrey">';
+$camaro->tryCar();
+echo '</div>';
+
+$car->setNbWheels(4);
+$camaro->setCurrentSpeed(265);
+$camaro->setEnergyLevel(70);
+echo $camaro->start() . '<br>';
+echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
+echo '<p style="color:green">' . $camaro->forward() . '</p>';
+echo '<p style="color:darkorange; text-align:left">' . $camaro->brake() . '</p>';
+echo '<p style="color:darkorange">' . $camaro->brake() . '</p>';
+echo '<p style="color:green">' . $camaro->forward() . '</p>';
+echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
+echo '</div>';
+
+var_dump($camaro);
 
 echo '<script type="text/javascript">
 var signe = -1;
@@ -111,21 +111,6 @@ obj.style.opacity = (obj.style.opacity * 1) + (signe * 0.04);
 // Pour arrêter le clignotement : clearInterval(periode);
 periode = setInterval(clignotementFading, 85 );
 </script>';
-
-$car->setNbWheels(4);
-$camaro->setCurrentSpeed(265);
-$camaro->setEnergyLevel(70);
-echo $camaro->start() . '<br>';
-echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
-echo '<p style="color:green">' . $camaro->forward() . '</p>';
-echo '<p style="color:darkorange; text-align:left">' . $camaro->brake() . '</p>';
-echo '<p style="color:darkorange">' . $camaro->brake() . '</p>';
-echo '<p style="color:green">' . $camaro->forward() . '</p>';
-echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
-echo '</div>';
-
-var_dump($camaro);
-
 
 /*
 

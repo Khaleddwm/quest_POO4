@@ -15,13 +15,38 @@ class Car extends Vehicle {
         parent::__construct($color, $nbSeats);
         $this->setEnergy($energy);
     }
+    
+    public function brake(): string
+    {
+        $sentence = "";
+        while ($this->currentSpeed > 0) {
+            $this->currentSpeed--;
+            $sentence .= "Brake!!! ";
+            $this->energyLevel -= 0.01;
+    }
+        $sentence .= "I'm stopped !";
+        return $sentence;
+    }
 
     public function start()
     {   
         parent::start();
         if($this->hasParkBrake == true) {
             throw new Exception("Your vehicle is started !" . '<br>' . "The parkbrake is activated.");
-        } 
+        }
+    }
+        
+    public function tryCar()
+    {
+        try {
+            $this->start();
+        } catch (Exception $e) {
+            $this->setHasParkBrake(false);
+            echo '<h1 style="color:red">' . $e->getMessage() . '</h1>';
+        } finally {
+            echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
+            echo "Ma voiture roule comme un donut." . '</h2>';
+        }
     }
 
     public function getEnergy() : string
@@ -57,16 +82,6 @@ class Car extends Vehicle {
         $this->hasParkBrake = $hasParkBrake;
     }
 
-    public function brake(): string
-    {
-        $sentence = "";
-        while ($this->currentSpeed > 0) {
-            $this->currentSpeed--;
-            $sentence .= "Brake!!! ";
-            $this->energyLevel -= 0.01;
-    }
-        $sentence .= "I'm stopped !";
-        return $sentence;
-    }
+    
  
 }
