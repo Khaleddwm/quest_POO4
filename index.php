@@ -10,32 +10,6 @@ require_once 'MotorWay.php';
 require_once 'PedestrianWay.php';
 require_once 'ResidentialWay.php';
 
-/*
-
-$springfieldPolice = new Car('red', 4, 'fuel');
-
-echo $springfieldPolice->start() . '<br>';
-
-$springfieldPolice->setCurrentSpeed(50) . '<br>';
-$springfieldPolice->setEnergyLevel(50) . '<br>';
-echo $springfieldPolice->forward() . '<br>';
-echo $springfieldPolice->brake() . '<br>';
-echo $springfieldPolice->brake() . '<br>';
-echo "This vehicle has " . $springfieldPolice->getEnergyLevel() . " liters in the tank." . '<br>' . '<br>';
-
-
-
-
-$rockrider = new Bicycle('purple', 1);
-
-$rockrider->setCurrentSpeed(20) . '<br>';
-echo $rockrider->start() . '<br>';
-echo $rockrider->forward() . '<br>';
-echo $rockrider->brake() . '<br>';
-echo $rockrider->brake() . '<br>' . '<br>';
-
-*/
-
 $car = new Car('green', 4, 'electric');
 
 echo '<div style="text-align:center">';
@@ -112,7 +86,26 @@ obj.style.opacity = (obj.style.opacity * 1) + (signe * 0.04);
 periode = setInterval(clignotementFading, 85 );
 </script>';
 
+
 /*
+
+$springfieldPolice = new Car('red', 4, 'fuel');
+
+echo $springfieldPolice->start() . '<br>';
+$springfieldPolice->setCurrentSpeed(50) . '<br>';
+$springfieldPolice->setEnergyLevel(50) . '<br>';
+echo $springfieldPolice->forward() . '<br>';
+echo $springfieldPolice->brake() . '<br>';
+echo $springfieldPolice->brake() . '<br>';
+echo "This vehicle has " . $springfieldPolice->getEnergyLevel() . " liters in the tank." . '<br>' . '<br>';
+
+$rockrider = new Bicycle('purple', 1);
+
+$rockrider->setCurrentSpeed(20) . '<br>';
+echo $rockrider->start() . '<br>';
+echo $rockrider->forward() . '<br>';
+echo $rockrider->brake() . '<br>';
+echo $rockrider->brake() . '<br>' . '<br>';
 
 var_dump(Car::ALLOWED_ENERGIES);
 
