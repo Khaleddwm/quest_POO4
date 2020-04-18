@@ -41,7 +41,7 @@ $car = new Car('green', 4, 'electric');
 echo '<div style="text-align:center">';
 echo '<h1 style="background-color:black; color:white">' . "Quest POO 4" . '</h1>';
 try {
-    $car->start();
+    echo $car->start();
 } catch (Exception $e) {
     $car->setHasParkBrake(false);
     echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey"><h1 style="color:red">' . $e->getMessage() . '</h1>';
@@ -87,7 +87,7 @@ echo '<div style="text-align:center">';
 try {
     $camaro->start();
 } catch (Exception $e) {
-    $camaro->setHasParkBrake(false);
+    echo $camaro->setHasParkBrake(false);
     echo '<div id="LblClignotant" style="background-color:lightgrey"><h1 style="color:red">' . $e->getMessage() . '</h1>';
 } finally {
     echo '<h2 style="color:purple">' . "You have disabled your parkbrake." . '<br><br>';
