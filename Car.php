@@ -8,7 +8,7 @@ class Car extends Vehicle {
     
     private $energy;
     private $energyLevel;
-    private $hasParkBrake = bool;
+    private $hasParkBrake = true;
 
     public function __construct(string $color, int $nbSeats, string $energy)
     {
