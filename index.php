@@ -15,6 +15,9 @@ $car = new Car('green', 4, 'electric');
 echo '<div style="text-align:center">';
 echo '<h1 style="background-color:black; color:white">' . "Quest POO 4" . '</h1>';
 echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey">';
+$car->setNbWheels(4);
+$car->setCurrentSpeed(127);
+$car->setEnergyLevel(90);
 
 try {
    $car->start();
@@ -28,10 +31,6 @@ try {
    echo '</div>';
 }
 
-$car->setNbWheels(4);
-$car->setCurrentSpeed(127);
-$car->setEnergyLevel(90);
-$car->start();
 echo '<h3 style="color:red">' . "This vehicle has " . $car->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $car->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $car->brake() . '</p>';
@@ -62,6 +61,9 @@ $camaro = new Car('purple', 2, 'fuel');
 echo '<div style="text-align:center">';
 echo '<div id="LblClignotant" style="background-color:lightgrey">';
 $camaro->setHasParkBrake(false);
+$car->setNbWheels(4);
+$camaro->setCurrentSpeed(265);
+$camaro->setEnergyLevel(70);
 
 try {
    $camaro->start();
@@ -74,9 +76,6 @@ try {
    echo '</div>';
 }
 
-$car->setNbWheels(4);
-$camaro->setCurrentSpeed(265);
-$camaro->setEnergyLevel(70);
 echo '<h3 style="color:red">' . "This vehicle has " . $camaro->getEnergyLevel() . " liters in the tank." . '</h3>';
 echo '<p style="color:green">' . $camaro->forward() . '</p>';
 echo '<p style="color:darkorange; text-align:left">' . $camaro->brake() . '</p>';
