@@ -23,7 +23,6 @@ try {
    $car->start();
 } catch (Exception $e) {
    $car->setHasParkBrake(false);
-   
    echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
 } finally {
    echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
