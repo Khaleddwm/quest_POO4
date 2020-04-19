@@ -14,11 +14,13 @@ $car = new Car('green', 4, 'electric');
 
 echo '<div style="text-align:center">';
 echo '<h1 style="background-color:black; color:white">' . "Quest POO 4" . '</h1>';
+echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey">';
+
 try {
    $car->start();
 } catch (Exception $e) {
    $car->setHasParkBrake(false);
-   echo '<div id="DivClignotante" style="visibility:visible; background-color:lightgrey">';
+   
    echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
 } finally {
    echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
@@ -58,12 +60,13 @@ periode = setInterval(clignotement, 800);
 
 $camaro = new Car('purple', 2, 'fuel');
 echo '<div style="text-align:center">';
+echo '<div id="LblClignotant" style="background-color:lightgrey">';
+$camaro->setHasParkBrake(false);
 
 try {
    $camaro->start();
 } catch (Exception $e) {
    $camaro->setHasParkBrake(false);
-   echo '<div id="LblClignotant" style="background-color:lightgrey">';
    echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
 } finally {
    echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';

@@ -33,6 +33,8 @@ class Car extends Vehicle {
         parent::start();
         if($this->hasParkBrake == true) {
             throw new Exception("Your vehicle is started !" . '<br>' . "The parkbrake is activated.");
+        } else {
+            echo '<h2 style="color:red">' . "Your vehicle is started !" . '</h2>';
         }
     }
         
