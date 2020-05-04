@@ -11,7 +11,7 @@ class Bike extends Vehicle implements LightableInterface {
      */
     public function switchOn() :bool
     {   // Si la vitesse est au dessus de 10 km/h
-        if ($this->currentSpeed >= 10)
+        if ($this->currentSpeed > 10)
         {
             return true;
         } else {
