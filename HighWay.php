@@ -15,22 +15,22 @@ abstract class HighWay {
         return $this->currentVehicles;
     }
     
-    public function getNbLane(): int
+    public function getNbLane() :int
     {
         return $this->nbLane;
     }
 
-    public function setNbLane(int $nbLane): void
+    public function setNbLane(int $nbLane) :void
     {
         $this->nbLane = $nbLane;
     }
 
-     public function getMaxSpeed(): int
+     public function getMaxSpeed() :int
     {
         return $this->maxSpeed;
     }
 
-    public function setMaxSpeed(int $maxSpeed): void
+    public function setMaxSpeed(int $maxSpeed) :void
     {
         $this->maxSpeed = $maxSpeed;
     }

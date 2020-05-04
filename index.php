@@ -9,7 +9,9 @@ require_once 'Skatebord.php';
 require_once 'MotorWay.php';
 require_once 'PedestrianWay.php';
 require_once 'ResidentialWay.php';
+require_once 'Bike.php';
 
+/*
 $car = new Car('green', 4, 'electric');
 
 echo '<div style="text-align:center">';
@@ -22,7 +24,6 @@ $car->setEnergyLevel(90);
 try {
    $car->start();
 } catch (Exception $e) {
-   $car->setHasParkBrake(false);
    echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
 } finally {
    echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
@@ -67,7 +68,6 @@ $camaro->setEnergyLevel(70);
 try {
    $camaro->start();
 } catch (Exception $e) {
-   $camaro->setHasParkBrake(false);
    echo '<h2 style="color:red">' . $e->getMessage() . '</h2>';
 } finally {
    echo '<h3 style="color:#333300">' . "You have disabled your parkbrake." . '<br></h3>';
@@ -102,9 +102,6 @@ obj.style.opacity = (obj.style.opacity * 1) + (signe * 0.04);
 // Pour arrêter le clignotement : clearInterval(periode);
 periode = setInterval(clignotementFading, 85 );
 </script>';
-
-
-/*
 
 $springfieldPolice = new Car('red', 4, 'fuel');
 
@@ -175,5 +172,31 @@ var_dump($pedestrianWay->getCurrentVehicles()) . '<br>';
 
 $car->setHasParkBrake(true);
 echo $car->getHasParkBrake();
-
 */
+
+$car = new Car('green', 4, 'electric');
+$rockrider = new Bike('purple', 1);
+
+echo '<div style="text-align:center; margin-bottom:100px">';
+echo '<h1 style="background-color:black; color:white">' . "Quest POO 5" . '</h1>';
+echo '<h2 style="background-color:orange; color:black">' . "Vehicle car" . '</h1>';
+
+var_dump($car);
+echo '<h3>' . "État des lampes:" . '</h3>';
+echo '*En mode switchOn: ' . '<br>';
+var_dump($car->switchOn());
+echo '*En mode switchOff: ' . '<br>';
+var_dump($car->switchOff());
+
+echo '<h2 style="background-color:orange; color:black">' . "Vehicle rockrider" . '</h1>';
+var_dump($rockrider);
+echo '<h3>' . "État des lampes:" . '</h3>';
+echo '*En mode switchOn à l\'arrêt: ' . '<br>';
+var_dump($rockrider->switchOn());
+$rockrider->setCurrentSpeed(15);
+echo 'Changement de la vitesse du rockrider à ' . $rockrider->getCurrentSpeed() . 'km/h' . '<br><br>';
+echo '*En mode switchOn à 10km/h ou plus: ' . '<br>';
+var_dump($rockrider->switchOn());
+echo '*En mode switchOff: ' . '<br>';
+var_dump($rockrider->switchOff());
+echo '</div>';

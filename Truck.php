@@ -18,12 +18,12 @@ class Truck extends Vehicle {
         $this->storageCapacity = $storageCapacity;
     }
     
-    public function getEnergy() : string
+    public function getEnergy() :string
     {
         return $this->energy;
     }
 
-    public function setEnergy(string $energy): Truck
+    public function setEnergy(string $energy) :Truck
     {
         if (in_array($energy, self::ALLOWED_ENERGIES)) {
             $this->energy = $energy;
@@ -31,32 +31,32 @@ class Truck extends Vehicle {
         return $this;
     }
 
-    public function getEnergyLevel() : int
+    public function getEnergyLevel() :int
     {
         return $this->energyLevel;
     }
 
-    public function setEnergyLevel(int $energyLevel) : void
+    public function setEnergyLevel(int $energyLevel) :void
     {
         $this->energyLevel = $energyLevel;
     }
     
-    public function getStorageCapacity() : string
+    public function getStorageCapacity() :string
     {
         return $this->storageCapacity;
     }
 
-    public function setStorageCapacity(int $storageCapacity) : void
+    public function setStorageCapacity(int $storageCapacity) :void
     {
         $this->storageCapacity = $storageCapacity;
     }
 
-    public function getCharge() : int
+    public function getCharge() :int
     {
         return $this->charge;
     }
 
-    public function setCharge(int $charge) : void
+    public function setCharge(int $charge) :void
     {
         $this->charge = $charge;
         if ($this->charge > $this->storageCapacity) {
@@ -64,7 +64,7 @@ class Truck extends Vehicle {
         }
     }
     
-    public function getStorage() : string
+    public function getStorage() :string
     {
         if ($this->charge == $this->storageCapacity) {
             return "full";

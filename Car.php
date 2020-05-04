@@ -4,7 +4,7 @@
 
 require_once 'Vehicle.php';
 
-class Car extends Vehicle {
+class Car extends Vehicle implements LightableInterface {
     
     private $energy;
     private $energyLevel;
@@ -16,7 +16,7 @@ class Car extends Vehicle {
         $this->setEnergy($energy);
     }
     
-    public function brake(): string
+    public function brake() :string
     {
         $sentence = "";
         while ($this->currentSpeed > 0) {
@@ -28,22 +28,23 @@ class Car extends Vehicle {
         return $sentence;
     }
 
-    public function start() : void
+    public function start() :void
     {   
         parent::start();
         if($this->hasParkBrake == true) {
+            $this->setHasParkBrake(false);
             throw new Exception("Your vehicle is started !" . '<br>' . "The parkbrake is activated.");
         } else {
             echo '<h2 style="color:red">' . "Your vehicle is started !" . '</h2>';
         }
     }
         
-    public function getEnergy() : string
+    public function getEnergy() :string
     {
         return $this->energy;
     }
 
-    public function setEnergy(string $energy): Car
+    public function setEnergy(string $energy) :Car
     {
         if (in_array($energy, self::ALLOWED_ENERGIES)) {
             $this->energy = $energy;
@@ -51,24 +52,40 @@ class Car extends Vehicle {
         return $this;
     }
 
-    public function getEnergyLevel() : float
+    public function getEnergyLevel() :float
     {
         return number_format($this->energyLevel, 2);
     }
 
-    public function setEnergyLevel(int $energyLevel) : void
+    public function setEnergyLevel(int $energyLevel) :void
     {
         $this->energyLevel = $energyLevel;
     }
 
-    public function getHasParkBrake() : bool
+    public function getHasParkBrake() :bool
     {
         return $this->hasParkBrake;
     }
 
-    public function setHasParkBrake($hasParkBrake) : void
+    public function setHasParkBrake($hasParkBrake) :void
     {
         $this->hasParkBrake = $hasParkBrake;
-    }   
- 
+    }
+
+    /**
+     * @return bool
+     */
+    public function switchOn() :bool
+    {
+        return true;
+    }
+
+    /**
+     * @return bool
+     */
+    public function switchOff() :bool
+    {
+         return false;
+    }
+
 }

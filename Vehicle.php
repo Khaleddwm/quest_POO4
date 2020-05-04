@@ -2,6 +2,8 @@
 
 // Vehicle.php
 
+require_once 'LightableInterface.php';
+
 class Vehicle {
 
 	protected $color; 
@@ -20,42 +22,42 @@ class Vehicle {
         $this->nbSeats = $nbSeats;
     }
     
-    public function getColor(): string
+    public function getColor() :string
     {
         return $this->color;
     }
 
-    public function setColor(string $color) : void
+    public function setColor(string $color) :void
     {
         $this->color = $color;
     }
 
-    public function getNbWheels() : int
+    public function getNbWheels() :int
     {
         return $this->nbWheels;
     }
 
-    public function setNbWheels(int $nbWheels) : void
+    public function setNbWheels(int $nbWheels) :void
     {
         $this->nbWheels = $nbWheels;
     }
 
-    public function getCurrentSpeed() : int
+    public function getCurrentSpeed() :int
     {
         return $this->currentSpeed;
     }
 
-    public function setCurrentSpeed($currentSpeed) : void
+    public function setCurrentSpeed($currentSpeed) :void
     {
         $this->currentSpeed = $currentSpeed;
     }
 
-    public function getNbSeats() : int
+    public function getNbSeats() :int
     {
         return $this->nbSeats;
     }
 
-    public function setNbSeats(int $nbSeat) : void
+    public function setNbSeats(int $nbSeat) :void
     {
         $this->nbSeats = $nbSeat;
     }
@@ -74,7 +76,7 @@ class Vehicle {
         }
     }
     
-    public function brake(): string
+    public function brake() :string
     {
         $sentence = "";
         while ($this->currentSpeed > 0) {
