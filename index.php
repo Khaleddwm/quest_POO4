@@ -175,7 +175,7 @@ echo $car->getHasParkBrake();
 */
 
 $car = new Car('green', 4, 'electric');
-$rockrider = new Bike('purple', 1);
+$bike = new Bike('purple', 1);
 
 echo '<div style="text-align:center; margin-bottom:100px">';
 echo '<h1 style="background-color:black; color:white">' . "Quest POO 5" . '</h1>';
@@ -189,14 +189,14 @@ echo '*En mode switchOff: ' . '<br>';
 var_dump($car->switchOff());
 
 echo '<h2 style="background-color:orange; color:black">' . "Vehicle rockrider" . '</h1>';
-var_dump($rockrider);
+var_dump($bike);
 echo '<h3>' . "État des lampes:" . '</h3>';
 echo '*En mode switchOn à l\'arrêt: ' . '<br>';
-var_dump($rockrider->switchOn());
-$rockrider->setCurrentSpeed(15);
-echo 'Changement de la vitesse du rockrider à ' . $rockrider->getCurrentSpeed() . 'km/h' . '<br><br>';
-echo '*En mode switchOn à 10km/h ou plus: ' . '<br>';
-var_dump($rockrider->switchOn());
+var_dump($bike->switchOn());
+$bike->setCurrentSpeed(15);
+echo 'Changement de la vitesse du "bike" à ' . $bike->getCurrentSpeed() . 'km/h.' . '<br><br>';
+echo '*En mode switchOn à plus de 10km/h : ' . '<br>';
+var_dump($bike->switchOn());
 echo '*En mode switchOff: ' . '<br>';
-var_dump($rockrider->switchOff());
+var_dump($bike->switchOff());
 echo '</div>';
